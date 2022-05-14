@@ -67,14 +67,13 @@ int isMMC3(int valor_1, int valor_2, int valor_3) {
 int main(int argc, char *argv[]) {
 
 	int valor_1, valor_2, valor_3;
-		
-	valor_1 = atoi(argv[1]);
-	valor_2 = atoi(argv[2]);
-	valor_3 = atoi(argv[3]);
-
+			
 	if (argc==3) {		
+		valor_1 = atoi(argv[1]);
+		valor_2 = atoi(argv[2]);
 		printf("\nO resultado do MMC e %d \n", isMMC2(valor_1, valor_2));
 	} else  if (argc==4) {
+		valor_3 = atoi(argv[3]);
 		printf("\nO resultado do MMC e %d \n", isMMC3(valor_1, valor_2, valor_3));
 	}
 	return 0;

@@ -38,7 +38,12 @@ bool Palindromo(char text[]) {
 
 	CharMinuscula(text);
 	RemoveEspacos(text);
-	if (strcmp(text, Inverte(text))==0) {
+
+	char *inverso;
+	inverso = Inverte(text);
+
+	if (strcmp(text, inverso)==0) {		
+		free(inverso);
 		return true;
 	}
 	return false;

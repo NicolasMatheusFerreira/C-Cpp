@@ -37,13 +37,9 @@ char* Inverte(char text[]) {
 bool Palindromo(char text[]) {
 
 	CharMinuscula(text);
-	RemoveEspacos(text);
+	RemoveEspacos(text);	
 
-	char *inverso;
-	inverso = Inverte(text);
-
-	if (strcmp(text, inverso)==0) {		
-		free(inverso);
+	if (strcmp(text, Inverte(text))==0) {			
 		return true;
 	}
 	return false;
@@ -51,7 +47,7 @@ bool Palindromo(char text[]) {
 
 int main(int argc, char *argv[]) {
 
-	char entrada[TAM];
+	char entrada[TAM], entrada2[TAM];	
 
 	if (argc==2) {
 		strcpy(entrada, argv[1]);
@@ -61,10 +57,12 @@ int main(int argc, char *argv[]) {
 		entrada[strlen(entrada)-1] = '\0'; // Correção de um '\n' que o leitor ler ao pressionar 'enter' do teclado;
 	}
 
+	strcpy(entrada2, entrada);
+
 	if (Palindromo(entrada)==true)
-		printf("\a%s E um palindromo!\n", entrada);
+		printf("\a%s E um palindromo!\n", entrada2);
 	else 
-		printf("\a%s Nao e um palindromo!\n", entrada);
+		printf("\a%s Nao e um palindromo!\n", entrada2);
 
 	return 0;
 }

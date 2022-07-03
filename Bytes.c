@@ -21,7 +21,4 @@ int main(void) {
 	printf("Vetor Real simples = %ld bytes -- %ld bits\n", sizeof(f), sizeof(f)*8);
 	printf("Vetor Real dublo = %ld bytes -- %ld bits\n", sizeof(g), sizeof(g)*8);
 	printf("Vetor caractere = %ld bytes -- %ld bits\n", sizeof(h), sizeof(h)*8);
-
-
-
 }

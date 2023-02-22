@@ -5,12 +5,11 @@
 void Imprime(int *valores, int tam) {
 	for(int i = 0; i<tam; i++)
 		printf("%d ", valores[i]);
-
 }
 
 int main(void) {
 
-	int **valores;
+	int *valores;
 	int n = 0, tam;
 	bool parada = true;
 
@@ -21,14 +20,19 @@ int main(void) {
 	do {
 		printf("Informe valor: ");
 		scanf("%d", &valores[n]);
-
-		if (valores[n]==-1)
-			parada = true;
-		else n++;
-
-	} while(parada && n<tam);
 	
+		printf("%d\n", valores[n]);
+		if (valores[n]==-1)
+			parada = false;
+		else n++;
+			
+	} while(parada==true && n<tam);
+	
+	printf("Imprimindo valores: ");
 	Imprime(valores, tam);
+	printf("\n\n");
+	printf("Liberacao de memoria. \n");
+	printf("Imprimindo valores: ");
 	free(valores);
 	Imprime(valores, tam);
 	return 0;
